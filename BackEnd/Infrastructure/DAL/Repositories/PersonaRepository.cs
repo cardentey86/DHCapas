@@ -21,19 +21,19 @@ namespace Infrastructure.DAL.Repositories
         {
             _context = context;
         }
-        public async Task<Persona> DeletePersonaById(int ID)
+        public async Task<bool> DeletePersonaById(int ID)
         {
             Persona person = await _context.Personas.FirstOrDefaultAsync(p => p.Id == ID);
             _context.Personas.Remove(person);
             Save();
-            return person; 
+            return true; 
         }
 
-        public async Task<Persona> DeletePersona(Persona persona)
+        public async Task<bool> DeletePersona(Persona persona)
         {
             Persona person = await _context.Personas.FirstOrDefaultAsync(p => p.Id == persona.Id);
             _context.Personas.Remove(person);
-            return person;
+            return true;
         }
 
         public async Task<Persona> GetPersonaByID(int id)

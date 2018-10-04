@@ -162,11 +162,9 @@ namespace WebApi.Controllers
                 return NotFound();
             }
 
-            await _personaService.Delete(id);
-           // await _personaRepository.DeletePersonaById(id);
-           // _personaRepository.Save();
-
-            return Ok(persona);
+            if(await _personaService.Delete(id))
+                return Ok(persona);
+            return NotFound();
         }
 
         private bool PersonaExists(int id)

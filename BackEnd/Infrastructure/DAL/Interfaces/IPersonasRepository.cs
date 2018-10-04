@@ -13,7 +13,7 @@ namespace Infrastructure.DAL.Interfaces
         Task<IEnumerable<Persona>> GetPersonas();
         Task<Persona> GetPersonaByID(int Id);
         void InsertPersona(Persona persona);
-        Task<Persona> DeletePersonaById(int ID);
+        Task<bool> DeletePersonaById(int ID);
         Task<Persona> DeletePersona(Persona persona);
         void SafeDeletePersona(int id);
         void UpdatePersona(int id, Persona persona);

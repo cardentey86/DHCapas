@@ -46,10 +46,9 @@ namespace Services.Services.Resources
             _personaRepository.UpdatePersona(id, _mapper.Map(entity, toUpdate));
         }
 
-        public virtual async Task Delete(int id)
+        public virtual async Task<bool> Delete(int id)
         {
-            //var toDelete = await _personaRepository.DeletePersonaById(id);
-            await _personaRepository.DeletePersonaById(id);
+           return await _personaRepository.DeletePersonaById(id);
         }
 
     }
