@@ -12737,8 +12737,8 @@
     },
     "Core/1.0.0": {
       "type": "project",
-      "path": "../../Core/Core.csproj",
-      "msbuildProject": "../../Core/Core.csproj"
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
     },
     "Infrastructure/1.0.0": {
       "type": "project",
@@ -12785,11 +12785,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\Core.csproj": {
+              "projectPath": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\Core.csproj"
+            },
             "D:\\PracticasAngular\\DHCapas\\BackEnd\\Infrastructure\\Infrastructure.csproj": {
               "projectPath": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Infrastructure\\Infrastructure.csproj"
-            },
-            "D:\\PracticasAngular\\DHCapas\\Core\\Core.csproj": {
-              "projectPath": "D:\\PracticasAngular\\DHCapas\\Core\\Core.csproj"
             }
           }
         }

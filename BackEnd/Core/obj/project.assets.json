@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PracticasAngular\\DHCapas\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "D:\\PracticasAngular\\DHCapas\\Core\\Core.csproj",
+      "projectPath": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\adrianalvarez\\.nuget\\packages\\",
-      "outputPath": "D:\\PracticasAngular\\DHCapas\\Core\\obj\\",
+      "outputPath": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
