@@ -1,0 +1,14 @@
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Core.dll
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Infrastructure.dll
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.csprojAssemblyReference.cache
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.csproj.CoreCompileInputs.cache
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfoInputs.cache
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfo.cs
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Services.deps.json
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Services.dll
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Services.pdb
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Core.pdb
+D:\PracticasAngular\DHCapas\BackEnd\Services\bin\Debug\netcoreapp2.0\Infrastructure.pdb
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.csproj.CopyComplete
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.dll
+D:\PracticasAngular\DHCapas\BackEnd\Services\obj\Debug\netcoreapp2.0\Services.pdb
