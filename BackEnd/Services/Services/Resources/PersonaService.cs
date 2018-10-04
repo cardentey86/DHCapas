@@ -18,6 +18,7 @@ namespace Services.Services.Resources
         {
             _mapper = mapper;
             _personaRepository = personasRepository;
+            
         }
 
         public async Task<IEnumerable<PersonaDTO>> GetAll()
@@ -26,13 +27,30 @@ namespace Services.Services.Resources
             return _mapper.Map<IEnumerable<Persona>, IEnumerable<PersonaDTO>>(result);
         }
 
+        public async Task<PersonaDTO> GetById(int id)
+        {
+            var result = await _personaRepository.GetPersonaByID(id);
+            return _mapper.Map<Persona, PersonaDTO>(result);
+        }
+
         public virtual async Task Add(PersonaDTO entity)
         {
-           // FillDefaultValues(entity);
             var e = _mapper.Map<PersonaDTO, Persona>(entity);
             _personaRepository.InsertPersona(_mapper.Map<PersonaDTO, Persona>(entity));
-            _personaRepository.Save();
         }
-       
+
+        public virtual async Task Update(int id, PersonaDTO entity)
+        {
+            var e = _mapper.Map<PersonaDTO, Persona>(entity);
+            var toUpdate = await _personaRepository.GetPersonaByID(id);
+            _personaRepository.UpdatePersona(id, _mapper.Map(entity, toUpdate));
+        }
+
+        public virtual async Task Delete(int id)
+        {
+            //var toDelete = await _personaRepository.DeletePersonaById(id);
+            await _personaRepository.DeletePersonaById(id);
+        }
+
     }
 }

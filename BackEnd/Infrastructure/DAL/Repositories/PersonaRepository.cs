@@ -25,6 +25,7 @@ namespace Infrastructure.DAL.Repositories
         {
             Persona person = await _context.Personas.FirstOrDefaultAsync(p => p.Id == ID);
             _context.Personas.Remove(person);
+            Save();
             return person; 
         }
 
@@ -51,6 +52,7 @@ namespace Infrastructure.DAL.Repositories
             persona.CreatedDate = DateTime.UtcNow;
             persona.ModifiedDate = DateTime.UtcNow;
             _context.Personas.Add(persona);
+            Save();
         }
 
         public void Save()
@@ -60,10 +62,11 @@ namespace Infrastructure.DAL.Repositories
 
         public void UpdatePersona(int id, Persona persona)
         {
-            var per = _context.Personas.FirstOrDefault(p => p.Id == id);
-            per = persona;
-            per.ModifiedDate = DateTime.UtcNow;
+            //var per = _context.Personas.FirstOrDefault(p => p.Id == id);
+            persona.ModifiedDate = DateTime.UtcNow;
             _context.Entry(persona).State = EntityState.Modified;
+            Save();
+            
         }
 
         public void SafeDeletePersona(int id)

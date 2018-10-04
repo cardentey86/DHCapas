@@ -45,7 +45,8 @@ namespace WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var persona = await _personaRepository.GetPersonaByID(id);
+            //var persona = await _personaRepository.GetPersonaByID(id);
+            var persona = await _personaService.GetById(id);
 
             if (persona == null)
             {
@@ -57,24 +58,26 @@ namespace WebApi.Controllers
 
         // PUT: api/Personas/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPersona([FromRoute] int id, [FromBody] Persona persona)
+        public async Task<IActionResult> PutPersona([FromRoute] int id, [FromBody] PersonaDTO persona)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var per = await _personaRepository.GetPersonaByID(id);
+           // var per = await _personaRepository.GetPersonaByID(id);
 
-            if (id != per.Id)
+            if (id != persona.Id)
             {
                 return BadRequest();
             }            
 
             try
             {
-                _personaRepository.UpdatePersona(id, persona);
-                _personaRepository.Save();
+                //_personaRepository.UpdatePersona(id, persona);
+                //_personaRepository.Save();
+
+               await _personaService.Update(id, persona);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -109,59 +112,62 @@ namespace WebApi.Controllers
         }
 
         // PUT: api/Personas/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> SafeDeletePersona([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id <= 0)
-            {
-                return BadRequest();
-            }
-
-            try
-            {
-                _personaRepository.SafeDeletePersona(id);
-                _personaRepository.Save();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PersonaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // DELETE: api/Personas/5
         //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeletePersona([FromRoute] int id)
+        //public async Task<IActionResult> SafeDeletePersona([FromRoute] int id)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    var persona = await _personaRepository.GetPersonaByID(id);
-        //    if (persona == null)
+        //    if (id <= 0)
         //    {
-        //        return NotFound();
+        //        return BadRequest();
         //    }
 
-        //    await _personaRepository.DeletePersonaById(id);
-        //    _personaRepository.Save();
+        //    try
+        //    {
+        //        _personaRepository.SafeDeletePersona(id);
+        //        _personaRepository.Save();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!PersonaExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-        //    return Ok(persona);
+        //    return NoContent();
         //}
+
+        //DELETE: api/Personas/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePersona([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //var persona = await _personaRepository.GetPersonaByID(id);
+            var persona = await _personaService.GetById(id);
+
+            if (persona == null)
+            {
+                return NotFound();
+            }
+
+            await _personaService.Delete(id);
+           // await _personaRepository.DeletePersonaById(id);
+           // _personaRepository.Save();
+
+            return Ok(persona);
+        }
 
         private bool PersonaExists(int id)
         {
