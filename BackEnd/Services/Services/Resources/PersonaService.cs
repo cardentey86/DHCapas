@@ -17,6 +17,7 @@ namespace Services.Services.Resources
 
         private IMapper _mapper;
         private UnitOfWork _unitOfWork;
+       // private GenericService _genericService;
 
         //IPersonasRepository _personaRepository;
 
@@ -25,12 +26,14 @@ namespace Services.Services.Resources
              _mapper = mapper;
             //_personaRepository = personasRepository;
             _unitOfWork = unitOfWork;
+            //_genericService = genericService;
 
         }
 
         public async Task<IEnumerable<PersonaDTO>> GetAll()
         {
-            // var result = await _personaRepository.GetPersonas();
+            
+             //var result = await _personaRepository.GetPersonas();
             var r = await _unitOfWork.PersonaRepository.Get(p => p.Deleted != true, orderBy: o => o.OrderBy(s => s.Id));
             return _mapper.Map<IEnumerable<Persona>, IEnumerable<PersonaDTO>>(r);
         }

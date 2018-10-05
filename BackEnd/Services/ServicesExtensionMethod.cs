@@ -16,11 +16,9 @@ namespace Services
         {
             services.AddAutoMapper();
 
-
             services.AddTransient<IPersonasRepository, PersonaRepository>();
             services.AddTransient<PersonaService, PersonaService>();
             services.AddTransient<UnitOfWork, UnitOfWork>();
-
 
             return services;
         }
