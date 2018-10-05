@@ -162,7 +162,7 @@ namespace WebApi.Controllers
                 return NotFound();
             }
 
-            if(await _personaService.Delete(id))
+            if(_personaService.Delete(id) != null)
                 return Ok(persona);
             return NotFound();
         }

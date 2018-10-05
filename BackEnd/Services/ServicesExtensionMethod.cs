@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Infrastructure.DAL;
 using Infrastructure.DAL.Interfaces;
 using Infrastructure.DAL.Repositories;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +19,7 @@ namespace Services
 
             services.AddTransient<IPersonasRepository, PersonaRepository>();
             services.AddTransient<PersonaService, PersonaService>();
-            //services.AddTransient<UnitOfWorkk, UnitOfWorkk>();
+            services.AddTransient<UnitOfWork, UnitOfWork>();
 
 
             return services;

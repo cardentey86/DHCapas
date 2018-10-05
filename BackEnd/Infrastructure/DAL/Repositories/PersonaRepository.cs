@@ -20,7 +20,8 @@ namespace Infrastructure.DAL.Repositories
         public PersonaRepository(RHDbContext context)
         {
             _context = context;
-        }
+        }      
+        
         public async Task<bool> DeletePersonaById(int ID)
         {
             Persona person = await _context.Personas.FirstOrDefaultAsync(p => p.Id == ID);

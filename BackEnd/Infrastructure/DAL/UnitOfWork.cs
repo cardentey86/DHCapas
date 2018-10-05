@@ -11,7 +11,6 @@ namespace Infrastructure.DAL
     {
         private RHDbContext _context;
         private GenericRepository<Persona> personaRepository;
-        //private CourseRepository courseRepository;
 
         public UnitOfWork(RHDbContext context)
         {
