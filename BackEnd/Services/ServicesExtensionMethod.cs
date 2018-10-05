@@ -19,7 +19,7 @@ namespace Services
 
             services.AddTransient<IPersonasRepository, PersonaRepository>();
             services.AddTransient<PersonaService, PersonaService>();
-            services.AddTransient<UnitOfWork, UnitOfWork>();
+            //services.AddTransient<UnitOfWork, UnitOfWork>();
 
 
             return services;

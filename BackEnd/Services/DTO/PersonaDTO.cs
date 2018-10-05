@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Services.DTO
 {
-    public class PersonaDTO: Entity
+    public class PersonaDTO: EntityDTO
     {
         public string Nombre { get; set; }
         public DateTime FechaNacimiento { get; set; }

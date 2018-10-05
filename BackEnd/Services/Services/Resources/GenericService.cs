@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using Core;
 using Core.Entities;
 using Infrastructure.DAL;
 using Infrastructure.DAL.Interfaces;
-using Infrastructure.DataContext;
 using Services.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,18 +12,14 @@ using System.Threading.Tasks;
 
 namespace Services.Services.Resources
 {
-    public class PersonaService
+    public class GenericService
     {
-
         private IMapper _mapper;
         private UnitOfWork _unitOfWork;
-;
-        //IPersonasRepository _personaRepository;
 
-        public PersonaService(IMapper mapper, UnitOfWork unitOfWork)
+        public GenericService(IMapper mapper, UnitOfWork unitOfWork)
         {
-             _mapper = mapper;
-            //_personaRepository = personasRepository;
+            _mapper = mapper;
             _unitOfWork = unitOfWork;
 
         }
@@ -42,7 +38,7 @@ namespace Services.Services.Resources
             return _mapper.Map<Persona, PersonaDTO>(result);
         }
 
-            public virtual async Task Add(PersonaDTO entity)
+        public virtual async Task Add(PersonaDTO entity)
         {
             var e = _mapper.Map<PersonaDTO, Persona>(entity);
             //_personaRepository.InsertPersona(_mapper.Map<PersonaDTO, Persona>(entity));
@@ -69,7 +65,5 @@ namespace Services.Services.Resources
             await _unitOfWork.Save();
             return result;
         }
-
-    }
     }
 }

@@ -12,6 +12,7 @@ namespace Services.Mapping
         public MappingProfile()
         {
             CreateMap<PersonaDTO, Persona>().ReverseMap();
+            CreateMap<>();
         }
     }
 }

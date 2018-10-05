@@ -1,4 +1,5 @@
-﻿using Core.Entities;
+﻿using Core;
+using Core.Entities;
 using Infrastructure.DataContext;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.DAL
 {
-    public class UnitOfWork: IDisposable
+    public class UnitOfWork: IDisposable 
     {
         private RHDbContext _context;
         private GenericRepository<Persona> personaRepository;

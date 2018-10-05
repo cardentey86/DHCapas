@@ -82,7 +82,7 @@ namespace Infrastructure.DAL
                 dbSet.Attach(entityToDelete);
             }
             dbSet.Remove(entityToDelete);
-            return entityToDelete;
+            return  entityToDelete;
         }
 
         public virtual void Update(TEntity entityToUpdate)
