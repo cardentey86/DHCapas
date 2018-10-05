@@ -17,7 +17,7 @@ namespace Services.Services.Resources
 
         private IMapper _mapper;
         private UnitOfWork _unitOfWork;
-;
+
         //IPersonasRepository _personaRepository;
 
         public PersonaService(IMapper mapper, UnitOfWork unitOfWork)
@@ -71,5 +71,5 @@ namespace Services.Services.Resources
         }
 
     }
-    }
+    
 }
