@@ -14,7 +14,7 @@ namespace Infrastructure.DAL.Interfaces
         Task<Persona> GetPersonaByID(int Id);
         void InsertPersona(Persona persona);
         Task<bool> DeletePersonaById(int ID);
-        Task<Persona> DeletePersona(Persona persona);
+        Task<bool> DeletePersona(Persona persona);
         void SafeDeletePersona(int id);
         void UpdatePersona(int id, Persona persona);
         bool PersonaExist(int id);

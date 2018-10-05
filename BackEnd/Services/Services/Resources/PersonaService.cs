@@ -37,6 +37,7 @@ namespace Services.Services.Resources
         {
             var e = _mapper.Map<PersonaDTO, Persona>(entity);
             _personaRepository.InsertPersona(_mapper.Map<PersonaDTO, Persona>(entity));
+            
         }
 
         public virtual async Task Update(int id, PersonaDTO entity)
