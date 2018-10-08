@@ -27,7 +27,8 @@ namespace Infrastructure.DAL
         {
             if (repositories.Keys.Contains(typeof(TEntity)) == true)
             {
-                return repositories[typeof(TEntity)] as IRepository<TEntity>;
+               // return repositories[typeof(TEntity)] as IRepository<TEntity>;
+                return repositories[typeof(TEntity)] as GenericRepository<TEntity>;
             }
 
             //if (repositories == null)
@@ -46,20 +47,20 @@ namespace Infrastructure.DAL
 
             //return (Repository<TEntity>)repositories[type];
 
-            IRepository<TEntity> repo = new GenericRepository<TEntity>(_context);
+            var repo = new GenericRepository<TEntity>(_context);
             repositories.Add(typeof(TEntity), repo);
             return repo;            
         }
 
 
-        //public GenericRepository<TEntity> PersonaRepository
+        //public GenericRepository<Persona> PersonaRepository
         //{
         //    get 
         //    {
 
         //        if (this.personaRepository == null)
         //        {
-        //            this.personaRepository = new GenericRepository<TEntity>(_context);
+        //            this.personaRepository = new GenericRepository<Persona>(_context);
         //        }
         //        return personaRepository;
         //    }
