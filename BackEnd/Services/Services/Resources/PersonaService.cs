@@ -16,12 +16,12 @@ namespace Services.Services.Resources
     {
 
         private IMapper _mapper;
-        private UnitOfWork _unitOfWork;
+        private UnitOfWork<Persona> _unitOfWork;
        // private GenericService _genericService;
 
         //IPersonasRepository _personaRepository;
 
-        public PersonaService(IMapper mapper, UnitOfWork unitOfWork)
+        public PersonaService(IMapper mapper, UnitOfWork<Persona> unitOfWork)
         {
              _mapper = mapper;
             //_personaRepository = personasRepository;

@@ -7,30 +7,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure.DAL;
 
 namespace Infrastructure.DAL
 {
-    public class UnitOfWork: IDisposable 
+    public class UnitOfWork: IDisposable
     {
         private RHDbContext _context;
-        private GenericRepository<Persona> personaRepository;
+        //private GenericRepository<Persona> personaRepository;        
        
+        public Dictionary<Type, object> repositories = new Dictionary<Type, object>();
+
         public UnitOfWork(RHDbContext context)
         {
             _context = context;
         }
-        public GenericRepository<Persona> PersonaRepository
-        {
-            get
-            {
 
-                if (this.personaRepository == null)
-                {
-                    this.personaRepository = new GenericRepository<Persona>(_context);
-                }
-                return personaRepository;
+        public GenericRepository<TEntity> Repository<TEntity>() where TEntity : Entity
+        {
+            if (repositories.Keys.Contains(typeof(TEntity)) == true)
+            {
+                return repositories[typeof(TEntity)] as IRepository<TEntity>;
             }
+
+            //if (repositories == null)
+            //{
+            //    repositories = new Dictionary<string, object>();
+            //}
+
+            //var type = typeof(TEntity).Name;
+
+            //if (!repositories.ContainsKey(type))
+            //{
+              //  var repositoryType = typeof(Repository<TEntity>);
+            //    var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _context);
+            //    repositories.Add(type, repositoryInstance);
+            //}
+
+            //return (Repository<TEntity>)repositories[type];
+
+            IRepository<TEntity> repo = new GenericRepository<TEntity>(_context);
+            repositories.Add(typeof(TEntity), repo);
+            return repo;            
         }
+
+
+        //public GenericRepository<TEntity> PersonaRepository
+        //{
+        //    get 
+        //    {
+
+        //        if (this.personaRepository == null)
+        //        {
+        //            this.personaRepository = new GenericRepository<TEntity>(_context);
+        //        }
+        //        return personaRepository;
+        //    }
+        //}
 
         //public CourseRepository CourseRepository
         //{
@@ -70,6 +103,8 @@ namespace Infrastructure.DAL
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        
     }
 }
 

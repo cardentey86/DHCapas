@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adrianalvarez\\.nuget\\packages\\": {},
+    "C:\\Users\\Adrian\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\Core.csproj",
+      "projectUniqueName": "I:\\Angular\\DHCapas\\BackEnd\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\Core.csproj",
-      "packagesPath": "C:\\Users\\adrianalvarez\\.nuget\\packages\\",
-      "outputPath": "D:\\PracticasAngular\\DHCapas\\BackEnd\\Core\\obj\\",
+      "projectPath": "I:\\Angular\\DHCapas\\BackEnd\\Core\\Core.csproj",
+      "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+      "outputPath": "I:\\Angular\\DHCapas\\BackEnd\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\adrianalvarez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -688,7 +688,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Instaladores\\Programacion\\dany\\.nuget\\packages": {},
+        "G:\\Instaladores\\Programacion\\nugets VS\\dany\\.nuget\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

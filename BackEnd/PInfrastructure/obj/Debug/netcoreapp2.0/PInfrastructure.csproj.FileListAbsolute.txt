@@ -1,0 +1,6 @@
+I:\Angular\DHCapas\BackEnd\PInfrastructure\bin\Debug\netcoreapp2.0\PInfrastructure.deps.json
+I:\Angular\DHCapas\BackEnd\PInfrastructure\bin\Debug\netcoreapp2.0\PInfrastructure.dll
+I:\Angular\DHCapas\BackEnd\PInfrastructure\obj\Debug\netcoreapp2.0\PInfrastructure.csprojResolveAssemblyReference.cache
+I:\Angular\DHCapas\BackEnd\PInfrastructure\obj\Debug\netcoreapp2.0\PInfrastructure.csproj.CoreCompileInputs.cache
+I:\Angular\DHCapas\BackEnd\PInfrastructure\obj\Debug\netcoreapp2.0\PInfrastructure.AssemblyInfoInputs.cache
+I:\Angular\DHCapas\BackEnd\PInfrastructure\obj\Debug\netcoreapp2.0\PInfrastructure.AssemblyInfo.cs

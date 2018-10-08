@@ -15,20 +15,21 @@ namespace Services.Services.Resources
     public class GenericService
     {
         //private IMapper _mapper;
-        //private UnitOfWork _unitOfWork;
+        //private UnitOfWork<TEntity> _unitOfWork;
 
-        //public GenericService(IMapper mapper, UnitOfWork unitOfWork)
+        //public GenericService(IMapper mapper, UnitOfWork<TEntity> unitOfWork)
         //{
         //    _mapper = mapper;
         //    _unitOfWork = unitOfWork;
 
         //}
 
-        //public async Task<IEnumerable<PersonaDTO>> GetAll()
+        //public async Task<IEnumerable<TEntity>> GetAll()
         //{
         //    // var result = await _personaRepository.GetPersonas();
         //    var r = await _unitOfWork.PersonaRepository.Get(p => p.Deleted != true, orderBy: o => o.OrderBy(s => s.Id));
-        //    return _mapper.Map<IEnumerable<Persona>, IEnumerable<PersonaDTO>>(r);
+
+        //    return _mapper.Map<IEnumerable<TEntity>, IEnumerable<TEntityDTO>>(r);
         //}
 
         //public async Task<PersonaDTO> GetById(int id)

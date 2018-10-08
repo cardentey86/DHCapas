@@ -13,7 +13,7 @@ using Core;
 
 namespace Infrastructure.DAL
 {
-    public class GenericRepository<TEntity> where TEntity: Entity
+    public class GenericRepository<TEntity>: IRepository<TEntity> where TEntity: Entity
     {
         internal RHDbContext _context;
         internal DbSet<TEntity> dbSet;
